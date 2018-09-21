@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'style/mystyle.css' %}">
+  <title>user info app</title>
+</head>
+<body>
+  <h1>next is the model creation</h1>
+  {% if the_users %}
+
+  <table>
+    <thead>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </thead>
+
+    {% for acc in the_users %}
+    <tr>
+      <td>{{acc.first_name}}</td>
+      <td>{{acc.seconed_name}}</td>
+      <td>{{acc.email}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>no recored</p>
+
+{% endif %}
+</body>
+</html>
